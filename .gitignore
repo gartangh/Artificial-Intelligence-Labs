@@ -49,3 +49,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# Virtual Environment
+python27venv/
+python37venv/
