@@ -68,7 +68,19 @@ class DirectionalGhost( GhostAgent ):
         #  - calculate distances to Pacman
         #  - take into account whether the ghost is "scared" or not
         "*** YOUR CODE HERE ***"
-        
+        distances = []
+        for newPosition in newPositions:
+            distances.append(manhattanDistance(pacmanPosition, newPosition))
+
+        if isScared: bestDistance = max(distances)
+        else: bestDistance = min(distances)
+
+        bestActions = []
+        for index, distance in enumerate(distances):
+            if distance == bestDistance:
+                bestActions.append(legalActions[index])
+
+        bestProb = 1.0
 
         # Construct distribution
         dist = util.Counter()

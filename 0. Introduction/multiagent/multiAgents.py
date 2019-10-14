@@ -140,8 +140,6 @@ class MinimaxAgent(MultiAgentSearchAgent):
             return self.max_value(gameState, agentIndex, nodeDepth)
         else:
             return self.min_value(gameState, agentIndex, nodeDepth)
-
-        return 'None'
      
     def max_value(self, gameState, agentIndex, nodeDepth):
 
