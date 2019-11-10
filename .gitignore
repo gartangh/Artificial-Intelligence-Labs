@@ -53,3 +53,6 @@ wheels/
 # Virtual Environment
 python27venv/
 python37venv/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/

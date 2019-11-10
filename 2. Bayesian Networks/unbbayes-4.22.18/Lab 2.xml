@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='US-ASCII'?>
+<xbifns:XMLBIF version="0.6" xmlns:xbifns="http://unbbayes.sourceforge.net/xml/XMLBIF_0_6.xsd">
+  <xbifns:header>
+    <xbifns:version>1.0</xbifns:version>
+    <xbifns:name>New BN</xbifns:name>
+    <xbifns:creator>UnBBayes</xbifns:creator>
+  </xbifns:header>
+  <xbifns:staticProperty>
+    <xbifns:nodeSize>0</xbifns:nodeSize>
+    <xbifns:nodeFontSize>0</xbifns:nodeFontSize>
+    <xbifns:colorUtilityNode>0</xbifns:colorUtilityNode>
+    <xbifns:colorDecisionNode>0</xbifns:colorDecisionNode>
+    <xbifns:colorDiscreteProbabilisticNode>0</xbifns:colorDiscreteProbabilisticNode>
+    <xbifns:colorContinuousProbilisticNode>0</xbifns:colorContinuousProbilisticNode>
+    <xbifns:colorExplanationNode>0</xbifns:colorExplanationNode>
+  </xbifns:staticProperty>
+  <xbifns:hierarchy/>
+  <xbifns:network>
+    <xbifns:variables>
+      <xbifns:variable rgbColor="-39322" height="60.0" width="95.0" yPos="53" xPos="114" type="DiscreteProbabilistic" name="Smoking">
+        <xbifns:description>C1</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-39322" height="60.0" width="199.0" yPos="58" xPos="350" type="DiscreteProbabilistic" name="Weakened_immune_system">
+        <xbifns:description>C3</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-10027009" height="60.0" width="91.0" yPos="144" xPos="58" type="DiscreteProbabilistic" name="Bronchitis">
+        <xbifns:description>C4</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-10027009" height="60.0" width="113.0" yPos="143" xPos="176" type="DiscreteProbabilistic" name="Lung_cancer">
+        <xbifns:description>C5</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-10027009" height="60.0" width="112.0" yPos="145" xPos="338" type="DiscreteProbabilistic" name="Pneumonia">
+        <xbifns:description>C6</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-10027009" height="60.0" width="126.0" yPos="143" xPos="459" type="DiscreteProbabilistic" name="Common_cold">
+        <xbifns:description>C7</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-10027162" height="60.0" width="122.0" yPos="242" xPos="41" type="DiscreteProbabilistic" name="Loose_cough">
+        <xbifns:description>C8</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-10027162" height="60.0" width="151.0" yPos="244" xPos="157" type="DiscreteProbabilistic" name="Shortness_of_breath">
+        <xbifns:description>C9</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-10027162" height="60.0" width="106.0" yPos="241" xPos="340" type="DiscreteProbabilistic" name="Chest_pain">
+        <xbifns:description>C10</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-10027162" height="60.0" width="80.0" yPos="240" xPos="444" type="DiscreteProbabilistic" name="Fever">
+        <xbifns:description>C11</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+      <xbifns:variable rgbColor="-10027162" height="60.0" width="110.0" yPos="241" xPos="518" type="DiscreteProbabilistic" name="Runny_nose">
+        <xbifns:description>C12</xbifns:description>
+        <xbifns:state name="Yes"/>
+        <xbifns:state name="No"/>
+      </xbifns:variable>
+    </xbifns:variables>
+    <xbifns:structure>
+      <xbifns:edge child="Bronchitis" parent="Smoking"/>
+      <xbifns:edge child="Lung_cancer" parent="Smoking"/>
+      <xbifns:edge child="Pneumonia" parent="Weakened_immune_system"/>
+      <xbifns:edge child="Common_cold" parent="Weakened_immune_system"/>
+      <xbifns:edge child="Fever" parent="Common_cold"/>
+      <xbifns:edge child="Runny_nose" parent="Common_cold"/>
+      <xbifns:edge child="Loose_cough" parent="Pneumonia"/>
+      <xbifns:edge child="Shortness_of_breath" parent="Pneumonia"/>
+      <xbifns:edge child="Chest_pain" parent="Pneumonia"/>
+      <xbifns:edge child="Chest_pain" parent="Lung_cancer"/>
+      <xbifns:edge child="Shortness_of_breath" parent="Lung_cancer"/>
+      <xbifns:edge child="Loose_cough" parent="Bronchitis"/>
+      <xbifns:edge child="Shortness_of_breath" parent="Bronchitis"/>
+      <xbifns:edge child="Pneumonia" parent="Lung_cancer"/>
+      <xbifns:edge child="Fever" parent="Pneumonia"/>
+    </xbifns:structure>
+    <xbifns:conditionalDistributionSet>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Smoking"/>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.28999999165534973</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.7099999785423279</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Weakened_immune_system"/>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.05000000074505806</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.949999988079071</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Bronchitis"/>
+        <xbifns:parents>
+          <xbifns:parent index="0" name="Smoking"/>
+        </xbifns:parents>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.30000001192092896</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.699999988079071</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="2">0.009999999776482582</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="3">0.9900000095367432</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Lung_cancer"/>
+        <xbifns:parents>
+          <xbifns:parent index="0" name="Smoking"/>
+        </xbifns:parents>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.10000000149011612</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.8999999761581421</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="2">0.009999999776482582</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="3">0.9900000095367432</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Pneumonia"/>
+        <xbifns:parents>
+          <xbifns:parent index="0" name="Weakened_immune_system"/>
+          <xbifns:parent index="1" name="Lung_cancer"/>
+        </xbifns:parents>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.3199999928474426</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.6800000071525574</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="2">0.05000000074505806</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="3">0.949999988079071</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="4">0.30000001192092896</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="5">0.699999988079071</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="6">0.0010000000474974513</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="7">0.9990000128746033</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Common_cold"/>
+        <xbifns:parents>
+          <xbifns:parent index="0" name="Weakened_immune_system"/>
+        </xbifns:parents>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.8999999761581421</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.10000000149011612</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="2">0.3199999928474426</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="3">0.6800000071525574</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Loose_cough"/>
+        <xbifns:parents>
+          <xbifns:parent index="0" name="Pneumonia"/>
+          <xbifns:parent index="1" name="Bronchitis"/>
+        </xbifns:parents>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.3499999940395355</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.6499999761581421</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="2">0.25</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="3">0.75</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="4">0.25</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="5">0.75</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="6">0.10000000149011612</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="7">0.8999999761581421</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Shortness_of_breath"/>
+        <xbifns:parents>
+          <xbifns:parent index="0" name="Pneumonia"/>
+          <xbifns:parent index="1" name="Lung_cancer"/>
+          <xbifns:parent index="2" name="Bronchitis"/>
+        </xbifns:parents>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.9900000095367432</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.009999999776482582</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="2">0.8999999761581421</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="3">0.10000000149011612</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="4">0.8999999761581421</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="5">0.10000000149011612</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="6">0.800000011920929</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="7">0.20000000298023224</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="8">0.699999988079071</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="9">0.30000001192092896</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="10">0.49000000953674316</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="11">0.5099999904632568</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="12">0.49000000953674316</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="13">0.5099999904632568</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="14">0.10000000149011612</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="15">0.8999999761581421</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Chest_pain"/>
+        <xbifns:parents>
+          <xbifns:parent index="0" name="Pneumonia"/>
+          <xbifns:parent index="1" name="Lung_cancer"/>
+        </xbifns:parents>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.25</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.75</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="2">0.20000000298023224</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="3">0.800000011920929</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="4">0.20000000298023224</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="5">0.800000011920929</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="6">0.10000000149011612</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="7">0.8999999761581421</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Fever"/>
+        <xbifns:parents>
+          <xbifns:parent index="0" name="Common_cold"/>
+          <xbifns:parent index="1" name="Pneumonia"/>
+        </xbifns:parents>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.9399999976158142</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.05999999865889549</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="2">0.8999999761581421</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="3">0.10000000149011612</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="4">0.20000000298023224</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="5">0.800000011920929</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="6">0.0010000000474974513</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="7">0.9990000128746033</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+      <xbifns:conditionalDistribution type="Discrete">
+        <xbifns:owner name="Runny_nose"/>
+        <xbifns:parents>
+          <xbifns:parent index="0" name="Common_cold"/>
+        </xbifns:parents>
+        <xbifns:CPT>
+          <xbifns:dependentParentIndex index="0">0.949999988079071</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="1">0.05000000074505806</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="2">0.009999999776482582</xbifns:dependentParentIndex>
+          <xbifns:dependentParentIndex index="3">0.9900000095367432</xbifns:dependentParentIndex>
+        </xbifns:CPT>
+      </xbifns:conditionalDistribution>
+    </xbifns:conditionalDistributionSet>
+  </xbifns:network>
+</xbifns:XMLBIF>

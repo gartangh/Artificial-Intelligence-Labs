@@ -1,0 +1,163 @@
+net
+{
+     node_size = (0 0);
+     name = "New BN";
+     UnBBayes_Color_Probabilistic_Description = "-256";
+     UnBBayes_Color_Probabilistic_Explanation = "-16711936";
+}
+
+node Smoking
+{
+     label = "C1";
+     position = (114 53);
+     states = ("Yes" "No");
+}
+
+node Weakened_immune_system
+{
+     label = "C3";
+     position = (350 58);
+     states = ("Yes" "No");
+}
+
+node Bronchitis
+{
+     label = "C4";
+     position = (58 144);
+     states = ("Yes" "No");
+}
+
+node Lung_cancer
+{
+     label = "C5";
+     position = (176 143);
+     states = ("Yes" "No");
+}
+
+node Pneumonia
+{
+     label = "C6";
+     position = (338 145);
+     states = ("Yes" "No");
+}
+
+node Common_cold
+{
+     label = "C7";
+     position = (459 143);
+     states = ("Yes" "No");
+}
+
+node Loose_cough
+{
+     label = "C8";
+     position = (41 242);
+     states = ("Yes" "No");
+}
+
+node Shortness_of_breath
+{
+     label = "C9";
+     position = (157 244);
+     states = ("Yes" "No");
+}
+
+node Chest_pain
+{
+     label = "C10";
+     position = (340 241);
+     states = ("Yes" "No");
+}
+
+node Fever
+{
+     label = "C11";
+     position = (444 240);
+     states = ("Yes" "No");
+}
+
+node Runny_nose
+{
+     label = "C12";
+     position = (518 241);
+     states = ("Yes" "No");
+}
+
+potential (Smoking)
+{
+ data = ( 0.29 0.71 );
+}
+
+potential (Weakened_immune_system)
+{
+ data = ( 0.05 0.95 );
+}
+
+potential (Bronchitis | Smoking)
+{
+ data = (( 0.3 0.7 )
+( 0.01 0.99 ));
+}
+
+potential (Lung_cancer | Smoking)
+{
+ data = (( 0.1 0.9 )
+( 0.01 0.99 ));
+}
+
+potential (Pneumonia | Lung_cancer Weakened_immune_system)
+{
+ data = ((( 0.32 0.68 )
+( 0.05 0.95 ))
+(( 0.3 0.7 )
+( 0.001 0.999 )));
+}
+
+potential (Common_cold | Weakened_immune_system)
+{
+ data = (( 0.9 0.1 )
+( 0.32 0.68 ));
+}
+
+potential (Loose_cough | Bronchitis Pneumonia)
+{
+ data = ((( 0.35 0.65 )
+( 0.25 0.75 ))
+(( 0.25 0.75 )
+( 0.1 0.9 )));
+}
+
+potential (Shortness_of_breath | Bronchitis Lung_cancer Pneumonia)
+{
+ data = (((( 0.99 0.01 )
+( 0.9 0.1 ))
+(( 0.9 0.1 )
+( 0.8 0.2 )))
+((( 0.7 0.3 )
+( 0.49 0.51 ))
+(( 0.49 0.51 )
+( 0.1 0.9 ))));
+}
+
+potential (Chest_pain | Lung_cancer Pneumonia)
+{
+ data = ((( 0.25 0.75 )
+( 0.2 0.8 ))
+(( 0.2 0.8 )
+( 0.1 0.9 )));
+}
+
+potential (Fever | Pneumonia Common_cold)
+{
+ data = ((( 0.94 0.06 )
+( 0.9 0.1 ))
+(( 0.2 0.8 )
+( 0.001 0.999 )));
+}
+
+potential (Runny_nose | Common_cold)
+{
+ data = (( 0.95 0.05 )
+( 0.01 0.99 ));
+}
+
